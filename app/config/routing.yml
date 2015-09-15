@@ -1,0 +1,7 @@
+mathilde_jobeet:
+    resource: "@MathildeJobeetBundle/Resources/config/routing.yml"
+    prefix:   /
+
+app:
+    resource: "@AppBundle/Controller/"
+    type:     annotation
