@@ -1,7 +1,7 @@
 <?php
 namespace Mathilde\JobeetBundle\DataFixtures\ORM;
  
-use Doctrine\Common\Persistence\ObjectManager;
+use Doctrine\Common\PersistenceObjectManager;
 use Doctrine\Common\DataFixtures\AbstractFixture;
 use Doctrine\Common\DataFixtures\OrderedFixtureInterface;
 use Mathilde\JobeetBundle\Entity\Category;
