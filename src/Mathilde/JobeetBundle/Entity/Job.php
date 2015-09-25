@@ -3,6 +3,7 @@
 namespace Mathilde\JobeetBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Mathilde\JobeetBundle\Utils\Jobeet as Jobeet;
 
 /**
  * Job
@@ -488,5 +489,29 @@ class Job
     public function setUpdatedAtValue()
     {
         $this->updated_at = new \DateTime();
+    }
+
+	/**
+	 * Slugify the company
+	 */
+    public function getCompanySlug()
+    {
+        return Jobeet::slugify($this->getCompany());
+    }
+ 
+	/**
+	 * Slugify the position
+	 */
+    public function getPositionSlug()
+    {
+        return Jobeet::slugify($this->getPosition());
+    }
+
+	/**
+	 * Slugify the location
+	 */
+    public function getLocationSlug()
+    {
+        return Jobeet::slugify($this->getLocation());
     }
 }
