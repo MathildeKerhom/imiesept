@@ -138,7 +138,7 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             }
 
             // mathilde_job_show
-            if (preg_match('#^/job/(?P<id>[^/]++)/show$#s', $pathinfo, $matches)) {
+            if (preg_match('#^/job/(?P<company>[^/]++)/(?P<location>[^/]++)/(?P<id>[^/]++)/(?P<position>[^/]++)$#s', $pathinfo, $matches)) {
                 return $this->mergeDefaults(array_replace($matches, array('_route' => 'mathilde_job_show')), array (  '_controller' => 'Mathilde\\JobeetBundle\\Controller\\JobController::showAction',));
             }
 
@@ -188,8 +188,12 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
         }
 
         // mathilde_jobeet_homepage
-        if (0 === strpos($pathinfo, '/hello') && preg_match('#^/hello/(?P<name>[^/]++)$#s', $pathinfo, $matches)) {
-            return $this->mergeDefaults(array_replace($matches, array('_route' => 'mathilde_jobeet_homepage')), array (  '_controller' => 'Mathilde\\JobeetBundle\\Controller\\DefaultController::indexAction',));
+        if (rtrim($pathinfo, '/') === '') {
+            if (substr($pathinfo, -1) !== '/') {
+                return $this->redirect($pathinfo.'/', 'mathilde_jobeet_homepage');
+            }
+
+            return array (  '_controller' => 'Mathilde\\JobeetBundle\\Controller\\JobController::indexAction',  '_route' => 'mathilde_jobeet_homepage',);
         }
 
         // homepage
