@@ -1,9 +1,9 @@
-{% extends 'MathildeJobeetBundle::layout.html.twig' %}
+{% extends 'MathildeJobbetBundle::layout.html.twig' %}
 
 {% block content %}
-    <h1>Job creation</h1>
+    <h1>Job edit</h1>
 
-    {{ form(form) }}
+    {{ form(edit_form) }}
 
         <ul class="record_actions">
     <li>
@@ -11,5 +11,6 @@
             Back to the list
         </a>
     </li>
+    <li>{{ form(delete_form) }}</li>
 </ul>
 {% endblock %}

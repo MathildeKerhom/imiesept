@@ -1,4 +1,4 @@
-{% extends 'MathildeJobeetBundle::layout.html.twig' %}
+{% extends 'MathildeJobbetBundle::layout.html.twig' %}
 
 {% block content %}
     <h1>Job creation</h1>
