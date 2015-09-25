@@ -3,5 +3,5 @@ mathilde_jobeet_mathilde_job:
     prefix:   /job
 
 mathilde_jobeet_homepage:
-    path:     /hello/{name}
-    defaults: { _controller: MathildeJobeetBundle:Default:index }
+    pattern:  /
+    defaults: { _controller: MathildeJobeetBundle:Job:index }
