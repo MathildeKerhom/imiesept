@@ -5,7 +5,6 @@ use Doctrine\Common\Persistence\ObjectManager;
 use Doctrine\Common\DataFixtures\AbstractFixture;
 use Doctrine\Common\DataFixtures\OrderedFixtureInterface;
 use Mathilde\JobeetBundle\Entity\Job;
-use Symfony\Component\Validator\Constraints\DateTime;
  
 class LoadJobData extends AbstractFixture implements OrderedFixtureInterface
 {
@@ -25,7 +24,7 @@ class LoadJobData extends AbstractFixture implements OrderedFixtureInterface
          $job_sensio_labs->setIsActivated(true);
          $job_sensio_labs->setToken('job_sensio_labs');
          $job_sensio_labs->setEmail('job@example.com');
-         $job_sensio_labs->setExpiresAt(new DateTime('+30 days'));
+         $job_sensio_labs->setExpiresAt(new \DateTime('+30 days'));
          $job_extreme_sensio = new Job();
          $job_extreme_sensio->setCategory($em->merge($this->getReference('category-design')));
          $job_extreme_sensio->setType('part-time');
@@ -40,7 +39,7 @@ class LoadJobData extends AbstractFixture implements OrderedFixtureInterface
          $job_extreme_sensio->setIsActivated(true);
          $job_extreme_sensio->setToken('job_extreme_sensio');
          $job_extreme_sensio->setEmail('job@example.com');
-         $job_extreme_sensio->setExpiresAt(new DateTime('+30 days'));
+         $job_extreme_sensio->setExpiresAt(new \DateTime('+30 days'));
  
          $em->persist($job_sensio_labs);
          $em->persist($job_extreme_sensio);

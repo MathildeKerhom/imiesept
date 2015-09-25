@@ -478,7 +478,7 @@ class Job
     public function setCreatedAtValue()
     {
         if (!$this->getCreatedAt()) {
-		$this->created_at = new DateTime();
+		$this->created_at = new \DateTime();
 	}
     }
 
@@ -487,6 +487,6 @@ class Job
      */
     public function setUpdatedAtValue()
     {
-        $this->updated_at = new DateTime();
+        $this->updated_at = new \DateTime();
     }
 }

@@ -1,0 +1,30 @@
+mathilde_job:
+    path:     /
+    defaults: { _controller: "MathildeJobeetBundle:Job:index" }
+
+mathilde_job_show:
+    path:     /{id}/show
+    defaults: { _controller: "MathildeJobeetBundle:Job:show" }
+
+mathilde_job_new:
+    path:     /new
+    defaults: { _controller: "MathildeJobeetBundle:Job:new" }
+
+mathilde_job_create:
+    path:     /create
+    defaults: { _controller: "MathildeJobeetBundle:Job:create" }
+    methods:  POST
+
+mathilde_job_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "MathildeJobeetBundle:Job:edit" }
+
+mathilde_job_update:
+    path:     /{id}/update
+    defaults: { _controller: "MathildeJobeetBundle:Job:update" }
+    methods:  [POST, PUT]
+
+mathilde_job_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "MathildeJobeetBundle:Job:delete" }
+    methods:  [POST, DELETE]

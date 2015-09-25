@@ -5,7 +5,6 @@ use Doctrine\Common\Persistence\ObjectManager;
 use Doctrine\Common\DataFixtures\AbstractFixture;
 use Doctrine\Common\DataFixtures\OrderedFixtureInterface;
 use Mathilde\JobeetBundle\Entity\Job;
-use Symfony\Component\Validator\Constraints\DateTime;
  
 class LoadJobData extends AbstractFixture implements OrderedFixtureInterface
 {

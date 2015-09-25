@@ -1,3 +1,7 @@
+mathilde_jobeet_mathilde_job:
+    resource: "@MathildeJobeetBundle/Resources/config/routing/job.yml"
+    prefix:   /job
+
 mathilde_jobeet_homepage:
     path:     /hello/{name}
     defaults: { _controller: MathildeJobeetBundle:Default:index }
