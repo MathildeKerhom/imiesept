@@ -64,10 +64,10 @@ class Category extends \Mathilde\JobeetBundle\Entity\Category implements \Doctri
     public function __sleep()
     {
         if ($this->__isInitialized__) {
-            return array('__isInitialized__', '' . "\0" . 'Mathilde\\JobeetBundle\\Entity\\Category' . "\0" . 'id', '' . "\0" . 'Mathilde\\JobeetBundle\\Entity\\Category' . "\0" . 'name', '' . "\0" . 'Mathilde\\JobeetBundle\\Entity\\Category' . "\0" . 'jobs', '' . "\0" . 'Mathilde\\JobeetBundle\\Entity\\Category' . "\0" . 'affiliates');
+            return array('__isInitialized__', '' . "\0" . 'Mathilde\\JobeetBundle\\Entity\\Category' . "\0" . 'id', '' . "\0" . 'Mathilde\\JobeetBundle\\Entity\\Category' . "\0" . 'name', '' . "\0" . 'Mathilde\\JobeetBundle\\Entity\\Category' . "\0" . 'jobs', '' . "\0" . 'Mathilde\\JobeetBundle\\Entity\\Category' . "\0" . 'affiliates', '' . "\0" . 'Mathilde\\JobeetBundle\\Entity\\Category' . "\0" . 'active_jobs');
         }
 
-        return array('__isInitialized__', '' . "\0" . 'Mathilde\\JobeetBundle\\Entity\\Category' . "\0" . 'id', '' . "\0" . 'Mathilde\\JobeetBundle\\Entity\\Category' . "\0" . 'name', '' . "\0" . 'Mathilde\\JobeetBundle\\Entity\\Category' . "\0" . 'jobs', '' . "\0" . 'Mathilde\\JobeetBundle\\Entity\\Category' . "\0" . 'affiliates');
+        return array('__isInitialized__', '' . "\0" . 'Mathilde\\JobeetBundle\\Entity\\Category' . "\0" . 'id', '' . "\0" . 'Mathilde\\JobeetBundle\\Entity\\Category' . "\0" . 'name', '' . "\0" . 'Mathilde\\JobeetBundle\\Entity\\Category' . "\0" . 'jobs', '' . "\0" . 'Mathilde\\JobeetBundle\\Entity\\Category' . "\0" . 'affiliates', '' . "\0" . 'Mathilde\\JobeetBundle\\Entity\\Category' . "\0" . 'active_jobs');
     }
 
     /**
@@ -274,6 +274,28 @@ class Category extends \Mathilde\JobeetBundle\Entity\Category implements \Doctri
         $this->__initializer__ && $this->__initializer__->__invoke($this, 'getAffiliates', array());
 
         return parent::getAffiliates();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setActiveJobs($jobs)
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setActiveJobs', array($jobs));
+
+        return parent::setActiveJobs($jobs);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getActiveJobs()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getActiveJobs', array());
+
+        return parent::getActiveJobs();
     }
 
     /**
