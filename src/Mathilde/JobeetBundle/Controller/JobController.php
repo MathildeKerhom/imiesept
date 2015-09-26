@@ -23,10 +23,14 @@ class JobController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        $entities = $em->getRepository('MathildeJobeetBundle:Job')->getActiveJobs();
-
+        $categories = $em->getRepository('MathildeJobeetBundle:Category')->getWithJobs();
+ 
+        foreach($categories as $category) {
+            $category->setActiveJobs($em->getRepository('MathildeJobeetBundle:Job')->getActiveJobs($category->getId()));
+        }
+ 
         return $this->render('MathildeJobeetBundle:Job:index.html.twig', array(
-            'entities' => $entities,
+            'categories' => $categories
         ));
     }
     /**
