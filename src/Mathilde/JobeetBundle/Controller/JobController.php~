@@ -21,6 +21,7 @@ class JobController extends Controller
      */
     public function indexAction()
     {
+		echo ("indexAction job");
         $em = $this->getDoctrine()->getManager();
 
 $entities = $em->getRepository('MathildeJobeetBundle:Job')->findAll();

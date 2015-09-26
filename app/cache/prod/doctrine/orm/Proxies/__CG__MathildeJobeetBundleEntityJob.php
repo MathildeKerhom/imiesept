@@ -595,4 +595,15 @@ class Job extends \Mathilde\JobeetBundle\Entity\Job implements \Doctrine\ORM\Pro
         return parent::getLocationSlug();
     }
 
+    /**
+     * {@inheritDoc}
+     */
+    public function setExpiresAtValue()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setExpiresAtValue', array());
+
+        return parent::setExpiresAtValue();
+    }
+
 }

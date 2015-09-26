@@ -38,7 +38,7 @@ class appProdUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirecta
             }
 
             // mathilde_job_show
-            if (preg_match('#^/job/(?P<company>[^/]++)/(?P<location>[^/]++)/(?P<id>d+)/(?P<position>[^/]++)$#s', $pathinfo, $matches)) {
+            if (preg_match('#^/job/(?P<company>[^/]++)/(?P<location>[^/]++)/(?P<id>[^/]++)/(?P<position>[^/]++)$#s', $pathinfo, $matches)) {
                 return $this->mergeDefaults(array_replace($matches, array('_route' => 'mathilde_job_show')), array (  '_controller' => 'Mathilde\\JobeetBundle\\Controller\\JobController::showAction',));
             }
 
