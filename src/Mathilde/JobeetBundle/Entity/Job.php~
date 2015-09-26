@@ -3,7 +3,7 @@
 namespace Mathilde\JobeetBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-use Mathilde\JobeetBundle\UtilsJobeet as Jobeet;
+use Mathilde\JobeetBundle\Utils\Jobeet as Jobeet;
 
 /**
  * Job
@@ -481,7 +481,6 @@ class Job
         if (!$this->getCreatedAt()) {
 		$this->created_at = new \DateTime();
 	}
-    }
 
     /**
      * @ORM\PreUpdate

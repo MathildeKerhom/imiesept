@@ -1,3 +1,5 @@
+<?php
+
 namespace Mathilde\JobeetBundle\Utils;
  
 class Jobeet
