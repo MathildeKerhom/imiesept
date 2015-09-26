@@ -196,6 +196,11 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             return array (  '_controller' => 'Mathilde\\JobeetBundle\\Controller\\JobController::indexAction',  '_route' => 'mathilde_jobeet_homepage',);
         }
 
+        // MathildeJobeetBundle_category
+        if (0 === strpos($pathinfo, '/category') && preg_match('#^/category/(?P<slug>[^/]++)(?:/(?P<page>[^/]++))?$#s', $pathinfo, $matches)) {
+            return $this->mergeDefaults(array_replace($matches, array('_route' => 'MathildeJobeetBundle_category')), array (  '_controller' => 'Mathilde\\JobeetBundle\\Controller\\CategoryController::showAction',  'page' => 1,));
+        }
+
         // homepage
         if (rtrim($pathinfo, '/') === '') {
             if (substr($pathinfo, -1) !== '/') {

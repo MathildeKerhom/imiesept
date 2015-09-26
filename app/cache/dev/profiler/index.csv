@@ -1,11 +1,6 @@
-fb35a3,127.0.0.1,GET,http://localhost/app_dev.php/job/,1443279386,
-00d0c7,127.0.0.1,GET,http://localhost/app_dev.php/job/,1443280083,
-531fbe,127.0.0.1,GET,http://localhost/app_dev.php/job/,1443280369,
-e53a8d,127.0.0.1,GET,http://localhost/app_dev.php/job/,1443281023,
-2c810d,127.0.0.1,GET,http://localhost/app_dev.php/job/,1443281537,
-243f80,127.0.0.1,GET,http://localhost/app_dev.php/job/,1443282134,
-059a6c,127.0.0.1,GET,http://localhost/app_dev.php/,1443282183,
-80cc7a,127.0.0.1,GET,"http://localhost/app_dev.php/job/company%20100/paris,%20france/6/eb%20developer",1443282187,
-cbf508,127.0.0.1,GET,"http://localhost/app_dev.php/job/company%20100/paris,%20france/1/eb%20developer",1443282200,a38c27
-a38c27,127.0.0.1,GET,"http://localhost/app_dev.php/job/company%20100/paris,%20france/1/eb%20developer",1443282200,
-dda4b0,127.0.0.1,GET,"http://localhost/app_dev.php/job/company%20100/paris,%20france/9/eb%20developer",1443282211,
+91663b,127.0.0.1,GET,http://localhost/app_dev.php/,1443290936,
+0aca17,127.0.0.1,GET,http://localhost/app_dev.php/,1443291629,
+9a6e47,127.0.0.1,GET,http://localhost/app_dev.php/,1443292199,
+2419c9,127.0.0.1,GET,http://localhost/app_dev.php/category/programming,1443292205,c98451
+c98451,127.0.0.1,GET,http://localhost/app_dev.php/category/programming,1443292205,
+38f8d3,127.0.0.1,GET,http://localhost/app_dev.php/category/programming,1443292304,
