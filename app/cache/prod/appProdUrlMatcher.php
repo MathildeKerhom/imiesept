@@ -27,9 +27,9 @@ class appProdUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirecta
         $context = $this->context;
         $request = $this->request;
 
-        if (0 === strpos($pathinfo, '/mathilde_job')) {
+        if (0 === strpos($pathinfo, '/job')) {
             // mathilde_job
-            if (rtrim($pathinfo, '/') === '/mathilde_job') {
+            if (rtrim($pathinfo, '/') === '/job') {
                 if (substr($pathinfo, -1) !== '/') {
                     return $this->redirect($pathinfo.'/', 'mathilde_job');
                 }
@@ -38,17 +38,17 @@ class appProdUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirecta
             }
 
             // mathilde_job_show
-            if (preg_match('#^/mathilde_job/(?P<id>[^/]++)/show$#s', $pathinfo, $matches)) {
+            if (preg_match('#^/job/(?P<company>[^/]++)/(?P<location>[^/]++)/(?P<id>d+)/(?P<position>[^/]++)$#s', $pathinfo, $matches)) {
                 return $this->mergeDefaults(array_replace($matches, array('_route' => 'mathilde_job_show')), array (  '_controller' => 'Mathilde\\JobeetBundle\\Controller\\JobController::showAction',));
             }
 
             // mathilde_job_new
-            if ($pathinfo === '/mathilde_job/new') {
+            if ($pathinfo === '/job/new') {
                 return array (  '_controller' => 'Mathilde\\JobeetBundle\\Controller\\JobController::newAction',  '_route' => 'mathilde_job_new',);
             }
 
             // mathilde_job_create
-            if ($pathinfo === '/mathilde_job/create') {
+            if ($pathinfo === '/job/create') {
                 if ($this->context->getMethod() != 'POST') {
                     $allow[] = 'POST';
                     goto not_mathilde_job_create;
@@ -59,12 +59,12 @@ class appProdUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirecta
             not_mathilde_job_create:
 
             // mathilde_job_edit
-            if (preg_match('#^/mathilde_job/(?P<id>[^/]++)/edit$#s', $pathinfo, $matches)) {
+            if (preg_match('#^/job/(?P<id>[^/]++)/edit$#s', $pathinfo, $matches)) {
                 return $this->mergeDefaults(array_replace($matches, array('_route' => 'mathilde_job_edit')), array (  '_controller' => 'Mathilde\\JobeetBundle\\Controller\\JobController::editAction',));
             }
 
             // mathilde_job_update
-            if (preg_match('#^/mathilde_job/(?P<id>[^/]++)/update$#s', $pathinfo, $matches)) {
+            if (preg_match('#^/job/(?P<id>[^/]++)/update$#s', $pathinfo, $matches)) {
                 if (!in_array($this->context->getMethod(), array('POST', 'PUT'))) {
                     $allow = array_merge($allow, array('POST', 'PUT'));
                     goto not_mathilde_job_update;
@@ -75,7 +75,7 @@ class appProdUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirecta
             not_mathilde_job_update:
 
             // mathilde_job_delete
-            if (preg_match('#^/mathilde_job/(?P<id>[^/]++)/delete$#s', $pathinfo, $matches)) {
+            if (preg_match('#^/job/(?P<id>[^/]++)/delete$#s', $pathinfo, $matches)) {
                 if (!in_array($this->context->getMethod(), array('POST', 'DELETE'))) {
                     $allow = array_merge($allow, array('POST', 'DELETE'));
                     goto not_mathilde_job_delete;
@@ -88,8 +88,12 @@ class appProdUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirecta
         }
 
         // mathilde_jobeet_homepage
-        if (0 === strpos($pathinfo, '/hello') && preg_match('#^/hello/(?P<name>[^/]++)$#s', $pathinfo, $matches)) {
-            return $this->mergeDefaults(array_replace($matches, array('_route' => 'mathilde_jobeet_homepage')), array (  '_controller' => 'Mathilde\\JobeetBundle\\Controller\\DefaultController::indexAction',));
+        if (rtrim($pathinfo, '/') === '') {
+            if (substr($pathinfo, -1) !== '/') {
+                return $this->redirect($pathinfo.'/', 'mathilde_jobeet_homepage');
+            }
+
+            return array (  '_controller' => 'Mathilde\\JobeetBundle\\Controller\\JobController::indexAction',  '_route' => 'mathilde_jobeet_homepage',);
         }
 
         // homepage

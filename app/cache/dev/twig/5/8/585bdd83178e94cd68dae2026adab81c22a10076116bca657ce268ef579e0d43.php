@@ -8,15 +8,15 @@ class __TwigTemplate_4ac91830e98257ea0adfa58788a6dd72f46f1653f1ef44d15dabeb44544
         parent::__construct($env);
 
         // line 1
-        $this->parent = $this->loadTemplate("::base.html.twig", "MathildeJobeetBundle:Job:new.html.twig", 1);
+        $this->parent = $this->loadTemplate("MathildeJobeetBundle::layout.html.twig", "MathildeJobeetBundle:Job:new.html.twig", 1);
         $this->blocks = array(
-            'body' => array($this, 'block_body'),
+            'content' => array($this, 'block_content'),
         );
     }
 
     protected function doGetParent(array $context)
     {
-        return "::base.html.twig";
+        return "MathildeJobeetBundle::layout.html.twig";
     }
 
     protected function doDisplay(array $context, array $blocks = array())
@@ -25,10 +25,10 @@ class __TwigTemplate_4ac91830e98257ea0adfa58788a6dd72f46f1653f1ef44d15dabeb44544
     }
 
     // line 3
-    public function block_body($context, array $blocks = array())
+    public function block_content($context, array $blocks = array())
     {
         // line 4
-        echo "<h1>Job creation</h1>
+        echo "    <h1>Job creation</h1>
 
     ";
         // line 6
@@ -63,9 +63,9 @@ class __TwigTemplate_4ac91830e98257ea0adfa58788a6dd72f46f1653f1ef44d15dabeb44544
         return array (  42 => 10,  35 => 6,  31 => 4,  28 => 3,  11 => 1,);
     }
 }
-/* {% extends '::base.html.twig' %}*/
+/* {% extends 'MathildeJobeetBundle::layout.html.twig' %}*/
 /* */
-/* {% block body -%}*/
+/* {% block content %}*/
 /*     <h1>Job creation</h1>*/
 /* */
 /*     {{ form(form) }}*/
