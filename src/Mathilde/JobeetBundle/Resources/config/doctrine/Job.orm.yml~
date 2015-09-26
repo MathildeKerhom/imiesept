@@ -1,4 +1,4 @@
-MathildeJobeetBundleEntityJob:
+Mathilde\JobeetBundle\Entity\Job:
     type: entity
     table: job
     id:
