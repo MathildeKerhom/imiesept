@@ -97,8 +97,8 @@ class appProdUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirecta
         }
 
         // MathildeJobeetBundle_category
-        if (0 === strpos($pathinfo, '/category') && preg_match('#^/category/(?P<slug>[^/]++)$#s', $pathinfo, $matches)) {
-            return $this->mergeDefaults(array_replace($matches, array('_route' => 'MathildeJobeetBundle_category')), array (  '_controller' => 'MathildeJobeetBundle:Category:show',));
+        if (0 === strpos($pathinfo, '/category') && preg_match('#^/category/(?P<slug>[^/]++)(?:/(?P<page>[^/]++))?$#s', $pathinfo, $matches)) {
+            return $this->mergeDefaults(array_replace($matches, array('_route' => 'MathildeJobeetBundle_category')), array (  '_controller' => 'Mathilde\\JobeetBundle\\Controller\\CategoryController::showAction',  'page' => 1,));
         }
 
         // homepage

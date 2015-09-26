@@ -39,6 +39,7 @@
     <parameter key="locale">en</parameter>
     <parameter key="secret">1d56874c4f065f187b593798421ecc493931411c</parameter>
     <parameter key="max_jobs_on_homepage">10</parameter>
+    <parameter key="max_jobs_on_category">20</parameter>
     <parameter key="controller_resolver.class">Symfony\Bundle\FrameworkBundle\Controller\ControllerResolver</parameter>
     <parameter key="controller_name_converter.class">Symfony\Bundle\FrameworkBundle\Controller\ControllerNameParser</parameter>
     <parameter key="response_listener.class">Symfony\Component\HttpKernel\EventListener\ResponseListener</parameter>
@@ -1773,7 +1774,7 @@
       <argument type="collection">
         <argument type="service">
           <service class="Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider" public="false">
-            <argument>5606cdb0c84fb5.16782418</argument>
+            <argument>5606df25ca3a98.86277192</argument>
           </service>
         </argument>
       </argument>
@@ -1892,7 +1893,7 @@
         <argument type="service">
           <service class="Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener" public="false">
             <argument type="service" id="security.context"/>
-            <argument>5606cdb0c84fb5.16782418</argument>
+            <argument>5606df25ca3a98.86277192</argument>
             <argument type="service" id="monolog.logger.security" on-invalid="null"/>
             <argument type="service" id="security.authentication.manager"/>
           </service>

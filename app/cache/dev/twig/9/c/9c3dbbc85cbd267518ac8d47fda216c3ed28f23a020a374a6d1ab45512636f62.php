@@ -48,6 +48,19 @@ class __TwigTemplate_8f8f8831d1217a160f33e04eb88877cae84f037a7033ab0b88ea0192c63
         // line 10
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable((isset($context["categories"]) ? $context["categories"] : $this->getContext($context, "categories")));
+        $context['loop'] = array(
+          'parent' => $context['_parent'],
+          'index0' => 0,
+          'index'  => 1,
+          'first'  => true,
+        );
+        if (is_array($context['_seq']) || (is_object($context['_seq']) && $context['_seq'] instanceof Countable)) {
+            $length = count($context['_seq']);
+            $context['loop']['revindex0'] = $length - 1;
+            $context['loop']['revindex'] = $length;
+            $context['loop']['length'] = $length;
+            $context['loop']['last'] = 1 === $length;
+        }
         foreach ($context['_seq'] as $context["_key"] => $context["category"]) {
             // line 11
             echo "            <div>
@@ -62,71 +75,19 @@ class __TwigTemplate_8f8f8831d1217a160f33e04eb88877cae84f037a7033ab0b88ea0192c63
             echo twig_escape_filter($this->env, $this->getAttribute($context["category"], "name", array()), "html", null, true);
             echo "</a></h1>
                 </div>
-                <table class=\"jobs\">
-                    ";
+                
+\t\t";
             // line 19
-            $context['_parent'] = $context;
-            $context['_seq'] = twig_ensure_traversable($this->getAttribute($context["category"], "activejobs", array()));
-            $context['loop'] = array(
-              'parent' => $context['_parent'],
-              'index0' => 0,
-              'index'  => 1,
-              'first'  => true,
-            );
-            if (is_array($context['_seq']) || (is_object($context['_seq']) && $context['_seq'] instanceof Countable)) {
-                $length = count($context['_seq']);
-                $context['loop']['revindex0'] = $length - 1;
-                $context['loop']['revindex'] = $length;
-                $context['loop']['length'] = $length;
-                $context['loop']['last'] = 1 === $length;
-            }
-            foreach ($context['_seq'] as $context["_key"] => $context["entity"]) {
-                // line 20
-                echo "                        <tr class=\"";
-                echo twig_escape_filter($this->env, twig_cycle(array(0 => "even", 1 => "odd"), $this->getAttribute($context["loop"], "index", array())), "html", null, true);
-                echo "\">
-                            <td class=\"location\">";
-                // line 21
-                echo twig_escape_filter($this->env, $this->getAttribute($context["entity"], "location", array()), "html", null, true);
-                echo "</td>
-                            <td class=\"position\">
-                                <a href=\"";
-                // line 23
-                echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("mathilde_job_show", array("id" => $this->getAttribute($context["entity"], "id", array()), "company" => $this->getAttribute($context["entity"], "companyslug", array()), "location" => $this->getAttribute($context["entity"], "locationslug", array()), "position" => $this->getAttribute($context["entity"], "positionslug", array()))), "html", null, true);
-                echo "\">
-                                    ";
-                // line 24
-                echo twig_escape_filter($this->env, $this->getAttribute($context["entity"], "position", array()), "html", null, true);
-                echo "
-                                </a>
-                            </td>
-                             <td class=\"company\">";
-                // line 27
-                echo twig_escape_filter($this->env, $this->getAttribute($context["entity"], "company", array()), "html", null, true);
-                echo "</td>
-                        </tr>
-                    ";
-                ++$context['loop']['index0'];
-                ++$context['loop']['index'];
-                $context['loop']['first'] = false;
-                if (isset($context['loop']['length'])) {
-                    --$context['loop']['revindex0'];
-                    --$context['loop']['revindex'];
-                    $context['loop']['last'] = 0 === $context['loop']['revindex0'];
-                }
-            }
-            $_parent = $context['_parent'];
-            unset($context['_seq'], $context['_iterated'], $context['_key'], $context['entity'], $context['_parent'], $context['loop']);
-            $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 30
-            echo "                </table>
+            echo twig_include($this->env, $context, "MathildeJobeetBundle:Job:list.html.twig", array("jobs" => $this->getAttribute($context["category"], "activejobs", array())));
+            echo "
+
                 ";
-            // line 31
+            // line 21
             if ($this->getAttribute($context["category"], "morejobs", array())) {
-                // line 32
+                // line 22
                 echo "                    <div class=\"more_jobs\">
                         and <a href=\"";
-                // line 33
+                // line 23
                 echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("MathildeJobeetBundle_category", array("slug" => $this->getAttribute($context["category"], "slug", array()))), "html", null, true);
                 echo "\">";
                 echo twig_escape_filter($this->env, $this->getAttribute($context["category"], "morejobs", array()), "html", null, true);
@@ -135,14 +96,22 @@ class __TwigTemplate_8f8f8831d1217a160f33e04eb88877cae84f037a7033ab0b88ea0192c63
                     </div>
                 ";
             }
-            // line 37
+            // line 27
             echo "            </div>
         ";
+            ++$context['loop']['index0'];
+            ++$context['loop']['index'];
+            $context['loop']['first'] = false;
+            if (isset($context['loop']['length'])) {
+                --$context['loop']['revindex0'];
+                --$context['loop']['revindex'];
+                $context['loop']['last'] = 0 === $context['loop']['revindex0'];
+            }
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['category'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 39
+        // line 29
         echo "    </div>
 ";
     }
@@ -159,7 +128,7 @@ class __TwigTemplate_8f8f8831d1217a160f33e04eb88877cae84f037a7033ab0b88ea0192c63
 
     public function getDebugInfo()
     {
-        return array (  146 => 39,  139 => 37,  130 => 33,  127 => 32,  125 => 31,  122 => 30,  105 => 27,  99 => 24,  95 => 23,  90 => 21,  85 => 20,  68 => 19,  60 => 16,  53 => 11,  49 => 10,  46 => 9,  43 => 8,  37 => 5,  32 => 4,  29 => 3,  11 => 1,);
+        return array (  115 => 29,  100 => 27,  91 => 23,  88 => 22,  86 => 21,  81 => 19,  73 => 16,  66 => 11,  49 => 10,  46 => 9,  43 => 8,  37 => 5,  32 => 4,  29 => 3,  11 => 1,);
     }
 }
 /* {% extends 'MathildeJobeetBundle::layout.html.twig' %}*/
@@ -179,19 +148,9 @@ class __TwigTemplate_8f8f8831d1217a160f33e04eb88877cae84f037a7033ab0b88ea0192c63
 /*                     </div>*/
 /*                     <h1><a href="{{ path('MathildeJobeetBundle_category', { 'slug': category.slug }) }}">{{ category.name }}</a></h1>*/
 /*                 </div>*/
-/*                 <table class="jobs">*/
-/*                     {% for entity in category.activejobs %}*/
-/*                         <tr class="{{ cycle(['even', 'odd'], loop.index) }}">*/
-/*                             <td class="location">{{ entity.location }}</td>*/
-/*                             <td class="position">*/
-/*                                 <a href="{{ path('mathilde_job_show', { 'id': entity.id, 'company': entity.companyslug, 'location': entity.locationslug, 'position': entity.positionslug }) }}">*/
-/*                                     {{ entity.position }}*/
-/*                                 </a>*/
-/*                             </td>*/
-/*                              <td class="company">{{ entity.company }}</td>*/
-/*                         </tr>*/
-/*                     {% endfor %}*/
-/*                 </table>*/
+/*                 */
+/* 		{{ include ('MathildeJobeetBundle:Job:list.html.twig', {'jobs': category.activejobs}) }}*/
+/* */
 /*                 {% if category.morejobs %}*/
 /*                     <div class="more_jobs">*/
 /*                         and <a href="{{ path('MathildeJobeetBundle_category', { 'slug': category.slug }) }}">{{ category.morejobs }}</a>*/
