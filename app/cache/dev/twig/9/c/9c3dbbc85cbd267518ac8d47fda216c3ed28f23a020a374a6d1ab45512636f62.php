@@ -72,15 +72,15 @@ class __TwigTemplate_8f8f8831d1217a160f33e04eb88877cae84f037a7033ab0b88ea0192c63
             echo twig_escape_filter($this->env, $this->getAttribute($context["entity"], "location", array()), "html", null, true);
             echo "</td>
                     <td class=\"position\">
-\t\t\t\t\t\t<a href=\"";
+<a href=\"";
             // line 15
-            echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("mathilde_job_show", array("id" => $this->getAttribute($context["entity"], "id", array()), "company" => $this->getAttribute($context["entity"], "company", array()), "location" => $this->getAttribute($context["entity"], "location", array()), "position" => $this->getAttribute($context["entity"], "position", array()))), "html", null, true);
+            echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("mathilde_job_show", array("id" => $this->getAttribute($context["entity"], "id", array()), "company" => $this->getAttribute($context["entity"], "companyslug", array()), "location" => $this->getAttribute($context["entity"], "locationslug", array()), "position" => $this->getAttribute($context["entity"], "positionslug", array()))), "html", null, true);
             echo "\">
-\t\t\t\t\t\t\t";
+   ";
             // line 16
             echo twig_escape_filter($this->env, $this->getAttribute($context["entity"], "position", array()), "html", null, true);
             echo "
-\t\t\t\t\t\t</a>
+</a>
                     </td>
                     <td class=\"company\">";
             // line 19
@@ -135,9 +135,9 @@ class __TwigTemplate_8f8f8831d1217a160f33e04eb88877cae84f037a7033ab0b88ea0192c63
 /*                 <tr class="{{ cycle(['even', 'odd'], loop.index) }}">*/
 /*                     <td class="location">{{ entity.location }}</td>*/
 /*                     <td class="position">*/
-/* 						<a href="{{ path('mathilde_job_show', { 'id': entity.id, 'company': entity.company, 'location': entity.location, 'position': entity.position }) }}">*/
-/* 							{{ entity.position }}*/
-/* 						</a>*/
+/* <a href="{{ path('mathilde_job_show', { 'id': entity.id, 'company': entity.companyslug, 'location': entity.locationslug, 'position': entity.positionslug}) }}">*/
+/*    {{ entity.position }}*/
+/* </a>*/
 /*                     </td>*/
 /*                     <td class="company">{{ entity.company }}</td>*/
 /*                 </tr>*/

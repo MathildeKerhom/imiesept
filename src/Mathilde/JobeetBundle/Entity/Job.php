@@ -479,9 +479,9 @@ class Job
     public function setCreatedAtValue()
     {
         if (!$this->getCreatedAt()) {
-		$this->created_at = new \DateTime();
+			$this->created_at = new \DateTime();
+		}
 	}
-    }
 
     /**
      * @ORM\PreUpdate

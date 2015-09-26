@@ -8,15 +8,15 @@ class __TwigTemplate_8511286ee0a13283fa2b6d8d430fc64b2e6034d3d69b8bc05d250b67d66
         parent::__construct($env);
 
         // line 1
-        $this->parent = $this->loadTemplate("::base.html.twig", "MathildeJobeetBundle:Job:edit.html.twig", 1);
+        $this->parent = $this->loadTemplate("MathildeJobeetBundle::layout.html.twig", "MathildeJobeetBundle:Job:edit.html.twig", 1);
         $this->blocks = array(
-            'body' => array($this, 'block_body'),
+            'content' => array($this, 'block_content'),
         );
     }
 
     protected function doGetParent(array $context)
     {
-        return "::base.html.twig";
+        return "MathildeJobeetBundle::layout.html.twig";
     }
 
     protected function doDisplay(array $context, array $blocks = array())
@@ -25,10 +25,10 @@ class __TwigTemplate_8511286ee0a13283fa2b6d8d430fc64b2e6034d3d69b8bc05d250b67d66
     }
 
     // line 3
-    public function block_body($context, array $blocks = array())
+    public function block_content($context, array $blocks = array())
     {
         // line 4
-        echo "<h1>Job edit</h1>
+        echo "    <h1>Job edit</h1>
 
     ";
         // line 6
@@ -67,9 +67,9 @@ class __TwigTemplate_8511286ee0a13283fa2b6d8d430fc64b2e6034d3d69b8bc05d250b67d66
         return array (  49 => 14,  42 => 10,  35 => 6,  31 => 4,  28 => 3,  11 => 1,);
     }
 }
-/* {% extends '::base.html.twig' %}*/
+/* {% extends 'MathildeJobeetBundle::layout.html.twig' %}*/
 /* */
-/* {% block body -%}*/
+/* {% block content %}*/
 /*     <h1>Job edit</h1>*/
 /* */
 /*     {{ form(edit_form) }}*/

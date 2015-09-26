@@ -4,7 +4,7 @@ mathilde_job:
 
 mathilde_job_show:
     pattern:  /{company}/{location}/{id}/{position}
-    defaults: { _controller: "MathildeJobeetBundle:Job:show" }
+    defaults: { _controller: "MathildeJobeetBundle:Job:show" }+
 
 mathilde_job_new:
     path:     /new
