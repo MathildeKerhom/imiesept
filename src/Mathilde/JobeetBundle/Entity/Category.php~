@@ -3,6 +3,7 @@
 namespace Mathilde\JobeetBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Mathilde\JobeetBundle\Utils\Jobeet as Jobeet;
 
 /**
  * Category
@@ -28,6 +29,10 @@ class Category
      * @var \Doctrine\Common\Collections\Collection
      */
     private $affiliates;
+
+    private $active_jobs;
+
+    private $more_jobs;
 
     /**
      * Constructor
@@ -137,6 +142,27 @@ class Category
         return $this->affiliates;
     }
 
+    public function setActiveJobs($jobs)
+    {
+        $this->active_jobs = $jobs;
+    }
+ 
+    public function getActiveJobs()
+    {
+        return $this->active_jobs;
+    }
+
+    public function setMoreJobs($jobs)
+    {
+        $this->more_jobs = $jobs >=  0 ? $jobs : 0;
+    }
+ 
+    public function getMoreJobs()
+    {
+        return $this->more_jobs;
+    }
+
+
 	/**
 	 * Category as a String
 	 *
@@ -146,4 +172,5 @@ class Category
 	{
 		return $this->getName() ? $this->getName() : "";
 	}
+
 }

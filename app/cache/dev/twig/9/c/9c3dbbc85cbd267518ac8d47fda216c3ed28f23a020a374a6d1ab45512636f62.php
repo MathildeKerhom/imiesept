@@ -55,10 +55,12 @@ class __TwigTemplate_8f8f8831d1217a160f33e04eb88877cae84f037a7033ab0b88ea0192c63
                     <div class=\"feed\">
                         <a href=\"\">Feed</a>
                     </div>
-                    <h1>";
+                    <h1><a href=\"";
             // line 16
+            echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("MathildeJobeetBundle_category", array("slug" => $this->getAttribute($context["category"], "slug", array()))), "html", null, true);
+            echo "\">";
             echo twig_escape_filter($this->env, $this->getAttribute($context["category"], "name", array()), "html", null, true);
-            echo "</h1>
+            echo "</a></h1>
                 </div>
                 <table class=\"jobs\">
                     ";
@@ -118,13 +120,29 @@ class __TwigTemplate_8f8f8831d1217a160f33e04eb88877cae84f037a7033ab0b88ea0192c63
             $context = array_intersect_key($context, $_parent) + $_parent;
             // line 30
             echo "                </table>
-            </div>
+                ";
+            // line 31
+            if ($this->getAttribute($context["category"], "morejobs", array())) {
+                // line 32
+                echo "                    <div class=\"more_jobs\">
+                        and <a href=\"";
+                // line 33
+                echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("MathildeJobeetBundle_category", array("slug" => $this->getAttribute($context["category"], "slug", array()))), "html", null, true);
+                echo "\">";
+                echo twig_escape_filter($this->env, $this->getAttribute($context["category"], "morejobs", array()), "html", null, true);
+                echo "</a>
+                        more...
+                    </div>
+                ";
+            }
+            // line 37
+            echo "            </div>
         ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['category'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 33
+        // line 39
         echo "    </div>
 ";
     }
@@ -141,7 +159,7 @@ class __TwigTemplate_8f8f8831d1217a160f33e04eb88877cae84f037a7033ab0b88ea0192c63
 
     public function getDebugInfo()
     {
-        return array (  128 => 33,  120 => 30,  103 => 27,  97 => 24,  93 => 23,  88 => 21,  83 => 20,  66 => 19,  60 => 16,  53 => 11,  49 => 10,  46 => 9,  43 => 8,  37 => 5,  32 => 4,  29 => 3,  11 => 1,);
+        return array (  146 => 39,  139 => 37,  130 => 33,  127 => 32,  125 => 31,  122 => 30,  105 => 27,  99 => 24,  95 => 23,  90 => 21,  85 => 20,  68 => 19,  60 => 16,  53 => 11,  49 => 10,  46 => 9,  43 => 8,  37 => 5,  32 => 4,  29 => 3,  11 => 1,);
     }
 }
 /* {% extends 'MathildeJobeetBundle::layout.html.twig' %}*/
@@ -159,7 +177,7 @@ class __TwigTemplate_8f8f8831d1217a160f33e04eb88877cae84f037a7033ab0b88ea0192c63
 /*                     <div class="feed">*/
 /*                         <a href="">Feed</a>*/
 /*                     </div>*/
-/*                     <h1>{{ category.name }}</h1>*/
+/*                     <h1><a href="{{ path('MathildeJobeetBundle_category', { 'slug': category.slug }) }}">{{ category.name }}</a></h1>*/
 /*                 </div>*/
 /*                 <table class="jobs">*/
 /*                     {% for entity in category.activejobs %}*/
@@ -174,6 +192,12 @@ class __TwigTemplate_8f8f8831d1217a160f33e04eb88877cae84f037a7033ab0b88ea0192c63
 /*                         </tr>*/
 /*                     {% endfor %}*/
 /*                 </table>*/
+/*                 {% if category.morejobs %}*/
+/*                     <div class="more_jobs">*/
+/*                         and <a href="{{ path('MathildeJobeetBundle_category', { 'slug': category.slug }) }}">{{ category.morejobs }}</a>*/
+/*                         more...*/
+/*                     </div>*/
+/*                 {% endif %}*/
 /*             </div>*/
 /*         {% endfor %}*/
 /*     </div>*/

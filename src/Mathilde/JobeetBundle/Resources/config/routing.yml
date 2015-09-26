@@ -5,3 +5,7 @@ mathilde_jobeet_mathilde_job:
 mathilde_jobeet_homepage:
     pattern:  /
     defaults: { _controller: MathildeJobeetBundle:Job:index }
+
+MathildeJobeetBundle_category:
+    pattern:  /category/{slug}
+    defaults: { _controller: MathildeJobeetBundle:Category:show }
