@@ -23,9 +23,7 @@ class JobController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        $query = $em->createQuery('SELECT j FROM MathildeJobeetBundle:Job j WHERE j.expires_at > :date'
-								 )->setParameter('date', date('Y-m-d H:i:s', time() - 86400 * 30));
-	$entities = $query->getResult();
+        $entities = $em->getRepository('MathildeJobeetBundle:Job')->getActiveJobs();
 
         return $this->render('MathildeJobeetBundle:Job:index.html.twig', array(
             'entities' => $entities,
