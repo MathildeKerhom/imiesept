@@ -29,7 +29,7 @@
     <parameter key="database_driver">pdo_mysql</parameter>
     <parameter key="database_host">127.0.0.1</parameter>
     <parameter key="database_port">3306</parameter>
-    <parameter key="database_name">jobeet</parameter>
+    <parameter key="database_name">jobeet_test</parameter>
     <parameter key="database_user">root</parameter>
     <parameter key="database_password">Mshtmw!1</parameter>
     <parameter key="mailer_transport">smtp</parameter>
@@ -1793,7 +1793,7 @@
       <argument type="collection">
         <argument type="service">
           <service class="Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider" public="false">
-            <argument>5607f9c751c093.07678577</argument>
+            <argument>560824aca2e5f4.14986723</argument>
           </service>
         </argument>
       </argument>
@@ -1912,7 +1912,7 @@
         <argument type="service">
           <service class="Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener" public="false">
             <argument type="service" id="security.context"/>
-            <argument>5607f9c751c093.07678577</argument>
+            <argument>560824aca2e5f4.14986723</argument>
             <argument type="service" id="monolog.logger.security" on-invalid="null"/>
             <argument type="service" id="security.authentication.manager"/>
           </service>
@@ -2281,7 +2281,7 @@
         <argument key="driver">pdo_mysql</argument>
         <argument key="host">127.0.0.1</argument>
         <argument key="port">3306</argument>
-        <argument key="dbname">jobeet</argument>
+        <argument key="dbname">jobeet_test</argument>
         <argument key="user">root</argument>
         <argument key="password">Mshtmw!1</argument>
         <argument key="charset">UTF8</argument>
