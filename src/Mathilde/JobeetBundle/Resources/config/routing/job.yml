@@ -6,6 +6,12 @@ mathilde_job_show:
     pattern:  /{company}/{location}/{id}/{position}
     defaults: { _controller: "MathildeJobeetBundle:Job:show" }
 
+mathilde_job_preview:
+    pattern:  /{company}/{location}/{token}/{position}
+    defaults: { _controller: "MathildeJobeetBundle:Job:preview" }
+    requirements:
+        token:  w+
+
 mathilde_job_new:
     path:     /new
     defaults: { _controller: "MathildeJobeetBundle:Job:new" }
@@ -16,15 +22,20 @@ mathilde_job_create:
     methods:  POST
 
 mathilde_job_edit:
-    path:     /{id}/edit
+    path:     /{token}/edit
     defaults: { _controller: "MathildeJobeetBundle:Job:edit" }
 
 mathilde_job_update:
-    path:     /{id}/update
+    path:     /{token}/update
     defaults: { _controller: "MathildeJobeetBundle:Job:update" }
     methods:  [POST, PUT]
 
 mathilde_job_delete:
-    path:     /{id}/delete
+    path:     /{token}/delete
     defaults: { _controller: "MathildeJobeetBundle:Job:delete" }
     methods:  [POST, DELETE]
+
+mathilde_job_publish:
+    pattern:  /{token}/publish
+    defaults: { _controller: "MathildeJobeetBundle:Job:publish" }
+    requirements: { _method: post }
