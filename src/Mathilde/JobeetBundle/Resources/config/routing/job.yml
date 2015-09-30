@@ -16,15 +16,15 @@ mathilde_job_create:
     methods:  POST
 
 mathilde_job_edit:
-    path:     /{id}/edit
+    path:     /{token}/edit
     defaults: { _controller: "MathildeJobeetBundle:Job:edit" }
 
 mathilde_job_update:
-    path:     /{id}/update
+    path:     /{token}/update
     defaults: { _controller: "MathildeJobeetBundle:Job:update" }
     methods:  [POST, PUT]
 
 mathilde_job_delete:
-    path:     /{id}/delete
+    path:     /{token}/delete
     defaults: { _controller: "MathildeJobeetBundle:Job:delete" }
     methods:  [POST, DELETE]
