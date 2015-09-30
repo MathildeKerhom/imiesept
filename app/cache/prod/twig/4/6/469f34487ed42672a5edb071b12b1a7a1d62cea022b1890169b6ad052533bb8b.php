@@ -63,7 +63,9 @@ class __TwigTemplate_fdbc2ebd99d5168743685cb8c07db524e324066ca1b29f750afc5937800
         }
         foreach ($context['_seq'] as $context["_key"] => $context["category"]) {
             // line 11
-            echo "            <div>
+            echo "            <div class=\"category_";
+            echo twig_escape_filter($this->env, $this->getAttribute($context["category"], "slug", array()), "html", null, true);
+            echo "\">
                 <div class=\"category\">
                     <div class=\"feed\">
                         <a href=\"\">Feed</a>
@@ -128,7 +130,7 @@ class __TwigTemplate_fdbc2ebd99d5168743685cb8c07db524e324066ca1b29f750afc5937800
 
     public function getDebugInfo()
     {
-        return array (  115 => 29,  100 => 27,  91 => 23,  88 => 22,  86 => 21,  81 => 19,  73 => 16,  66 => 11,  49 => 10,  46 => 9,  43 => 8,  37 => 5,  32 => 4,  29 => 3,  11 => 1,);
+        return array (  117 => 29,  102 => 27,  93 => 23,  90 => 22,  88 => 21,  83 => 19,  75 => 16,  66 => 11,  49 => 10,  46 => 9,  43 => 8,  37 => 5,  32 => 4,  29 => 3,  11 => 1,);
     }
 }
 /* {% extends 'MathildeJobeetBundle::layout.html.twig' %}*/
@@ -141,7 +143,7 @@ class __TwigTemplate_fdbc2ebd99d5168743685cb8c07db524e324066ca1b29f750afc5937800
 /* {% block content %}*/
 /*     <div id="jobs">*/
 /*         {% for category in categories %}*/
-/*             <div>*/
+/*             <div class="category_{{ category.slug }}">*/
 /*                 <div class="category">*/
 /*                     <div class="feed">*/
 /*                         <a href="">Feed</a>*/
