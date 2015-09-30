@@ -50,10 +50,10 @@ class JobController extends Controller
             $em->persist($entity);
             $em->flush();
  
-            return $this->redirect($this->generateUrl('ibw_job_show', array(
+            return $this->redirect($this->generateUrl('mathilde_job_preview', array(
                 'company' => $entity->getCompanySlug(),
                 'location' => $entity->getLocationSlug(),
-                'id' => $entity->getId(),
+                'token' => $entity->getToken(),
                 'position' => $entity->getPositionSlug()
             )));
         }
@@ -185,7 +185,12 @@ class JobController extends Controller
 	    $em->persist($entity);
             $em->flush();
 
-            return $this->redirect($this->generateUrl('mathilde_job_edit', array('token' => $token)));
+            return $this->redirect($this->generateUrl('mathilde_job_preview', array(
+            	'company' => $entity->getCompanySlug(),
+            	'location' => $entity->getLocationSlug(),
+            	'token' => $entity->getToken(),
+            	'position' => $entity->getPositionSlug()
+            )));
         }
 
         return $this->render('MathildeJobeetBundle:Job:edit.html.twig', array(
@@ -231,5 +236,23 @@ class JobController extends Controller
             ->add('token', 'hidden')
             ->getForm()
         ;
+    }
+
+    public function previewAction($token)
+    {
+        $em = $this->getDoctrine()->getManager();
+ 
+        $entity = $em->getRepository('MathildeJobeetBundle:Job')->findOneByToken($token);
+ 
+        if (!$entity) {
+            throw $this->createNotFoundException('Unable to find Job entity.');
+        }
+ 
+        $deleteForm = $this->createDeleteForm($entity->getId());
+ 
+        return $this->render('MathildeJobeetBundle:Job:show.html.twig', array(
+            'entity'      => $entity,
+            'delete_form' => $deleteForm->createView(),
+        ));
     }
 }
