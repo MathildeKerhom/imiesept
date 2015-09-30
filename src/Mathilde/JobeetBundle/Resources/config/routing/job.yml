@@ -34,3 +34,8 @@ mathilde_job_delete:
     path:     /{token}/delete
     defaults: { _controller: "MathildeJobeetBundle:Job:delete" }
     methods:  [POST, DELETE]
+
+mathilde_job_publish:
+    pattern:  /{token}/publish
+    defaults: { _controller: "MathildeJobeetBundle:Job:publish" }
+    requirements: { _method: post }
