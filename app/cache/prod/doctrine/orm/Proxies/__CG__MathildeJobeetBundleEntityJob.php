@@ -64,10 +64,10 @@ class Job extends \Mathilde\JobeetBundle\Entity\Job implements \Doctrine\ORM\Pro
     public function __sleep()
     {
         if ($this->__isInitialized__) {
-            return array('__isInitialized__', '' . "\0" . 'Mathilde\\JobeetBundle\\Entity\\Job' . "\0" . 'id', '' . "\0" . 'Mathilde\\JobeetBundle\\Entity\\Job' . "\0" . 'type', '' . "\0" . 'Mathilde\\JobeetBundle\\Entity\\Job' . "\0" . 'company', '' . "\0" . 'Mathilde\\JobeetBundle\\Entity\\Job' . "\0" . 'logo', '' . "\0" . 'Mathilde\\JobeetBundle\\Entity\\Job' . "\0" . 'url', '' . "\0" . 'Mathilde\\JobeetBundle\\Entity\\Job' . "\0" . 'position', '' . "\0" . 'Mathilde\\JobeetBundle\\Entity\\Job' . "\0" . 'location', '' . "\0" . 'Mathilde\\JobeetBundle\\Entity\\Job' . "\0" . 'description', '' . "\0" . 'Mathilde\\JobeetBundle\\Entity\\Job' . "\0" . 'how_to_apply', '' . "\0" . 'Mathilde\\JobeetBundle\\Entity\\Job' . "\0" . 'token', '' . "\0" . 'Mathilde\\JobeetBundle\\Entity\\Job' . "\0" . 'is_public', '' . "\0" . 'Mathilde\\JobeetBundle\\Entity\\Job' . "\0" . 'is_activated', '' . "\0" . 'Mathilde\\JobeetBundle\\Entity\\Job' . "\0" . 'email', '' . "\0" . 'Mathilde\\JobeetBundle\\Entity\\Job' . "\0" . 'expires_at', '' . "\0" . 'Mathilde\\JobeetBundle\\Entity\\Job' . "\0" . 'created_at', '' . "\0" . 'Mathilde\\JobeetBundle\\Entity\\Job' . "\0" . 'updated_at', '' . "\0" . 'Mathilde\\JobeetBundle\\Entity\\Job' . "\0" . 'category');
+            return array('__isInitialized__', '' . "\0" . 'Mathilde\\JobeetBundle\\Entity\\Job' . "\0" . 'id', '' . "\0" . 'Mathilde\\JobeetBundle\\Entity\\Job' . "\0" . 'type', '' . "\0" . 'Mathilde\\JobeetBundle\\Entity\\Job' . "\0" . 'company', '' . "\0" . 'Mathilde\\JobeetBundle\\Entity\\Job' . "\0" . 'logo', '' . "\0" . 'Mathilde\\JobeetBundle\\Entity\\Job' . "\0" . 'url', '' . "\0" . 'Mathilde\\JobeetBundle\\Entity\\Job' . "\0" . 'position', '' . "\0" . 'Mathilde\\JobeetBundle\\Entity\\Job' . "\0" . 'location', '' . "\0" . 'Mathilde\\JobeetBundle\\Entity\\Job' . "\0" . 'description', '' . "\0" . 'Mathilde\\JobeetBundle\\Entity\\Job' . "\0" . 'how_to_apply', '' . "\0" . 'Mathilde\\JobeetBundle\\Entity\\Job' . "\0" . 'token', '' . "\0" . 'Mathilde\\JobeetBundle\\Entity\\Job' . "\0" . 'is_public', '' . "\0" . 'Mathilde\\JobeetBundle\\Entity\\Job' . "\0" . 'is_activated', '' . "\0" . 'Mathilde\\JobeetBundle\\Entity\\Job' . "\0" . 'email', '' . "\0" . 'Mathilde\\JobeetBundle\\Entity\\Job' . "\0" . 'expires_at', '' . "\0" . 'Mathilde\\JobeetBundle\\Entity\\Job' . "\0" . 'created_at', '' . "\0" . 'Mathilde\\JobeetBundle\\Entity\\Job' . "\0" . 'updated_at', '' . "\0" . 'Mathilde\\JobeetBundle\\Entity\\Job' . "\0" . 'category', 'file');
         }
 
-        return array('__isInitialized__', '' . "\0" . 'Mathilde\\JobeetBundle\\Entity\\Job' . "\0" . 'id', '' . "\0" . 'Mathilde\\JobeetBundle\\Entity\\Job' . "\0" . 'type', '' . "\0" . 'Mathilde\\JobeetBundle\\Entity\\Job' . "\0" . 'company', '' . "\0" . 'Mathilde\\JobeetBundle\\Entity\\Job' . "\0" . 'logo', '' . "\0" . 'Mathilde\\JobeetBundle\\Entity\\Job' . "\0" . 'url', '' . "\0" . 'Mathilde\\JobeetBundle\\Entity\\Job' . "\0" . 'position', '' . "\0" . 'Mathilde\\JobeetBundle\\Entity\\Job' . "\0" . 'location', '' . "\0" . 'Mathilde\\JobeetBundle\\Entity\\Job' . "\0" . 'description', '' . "\0" . 'Mathilde\\JobeetBundle\\Entity\\Job' . "\0" . 'how_to_apply', '' . "\0" . 'Mathilde\\JobeetBundle\\Entity\\Job' . "\0" . 'token', '' . "\0" . 'Mathilde\\JobeetBundle\\Entity\\Job' . "\0" . 'is_public', '' . "\0" . 'Mathilde\\JobeetBundle\\Entity\\Job' . "\0" . 'is_activated', '' . "\0" . 'Mathilde\\JobeetBundle\\Entity\\Job' . "\0" . 'email', '' . "\0" . 'Mathilde\\JobeetBundle\\Entity\\Job' . "\0" . 'expires_at', '' . "\0" . 'Mathilde\\JobeetBundle\\Entity\\Job' . "\0" . 'created_at', '' . "\0" . 'Mathilde\\JobeetBundle\\Entity\\Job' . "\0" . 'updated_at', '' . "\0" . 'Mathilde\\JobeetBundle\\Entity\\Job' . "\0" . 'category');
+        return array('__isInitialized__', '' . "\0" . 'Mathilde\\JobeetBundle\\Entity\\Job' . "\0" . 'id', '' . "\0" . 'Mathilde\\JobeetBundle\\Entity\\Job' . "\0" . 'type', '' . "\0" . 'Mathilde\\JobeetBundle\\Entity\\Job' . "\0" . 'company', '' . "\0" . 'Mathilde\\JobeetBundle\\Entity\\Job' . "\0" . 'logo', '' . "\0" . 'Mathilde\\JobeetBundle\\Entity\\Job' . "\0" . 'url', '' . "\0" . 'Mathilde\\JobeetBundle\\Entity\\Job' . "\0" . 'position', '' . "\0" . 'Mathilde\\JobeetBundle\\Entity\\Job' . "\0" . 'location', '' . "\0" . 'Mathilde\\JobeetBundle\\Entity\\Job' . "\0" . 'description', '' . "\0" . 'Mathilde\\JobeetBundle\\Entity\\Job' . "\0" . 'how_to_apply', '' . "\0" . 'Mathilde\\JobeetBundle\\Entity\\Job' . "\0" . 'token', '' . "\0" . 'Mathilde\\JobeetBundle\\Entity\\Job' . "\0" . 'is_public', '' . "\0" . 'Mathilde\\JobeetBundle\\Entity\\Job' . "\0" . 'is_activated', '' . "\0" . 'Mathilde\\JobeetBundle\\Entity\\Job' . "\0" . 'email', '' . "\0" . 'Mathilde\\JobeetBundle\\Entity\\Job' . "\0" . 'expires_at', '' . "\0" . 'Mathilde\\JobeetBundle\\Entity\\Job' . "\0" . 'created_at', '' . "\0" . 'Mathilde\\JobeetBundle\\Entity\\Job' . "\0" . 'updated_at', '' . "\0" . 'Mathilde\\JobeetBundle\\Entity\\Job' . "\0" . 'category', 'file');
     }
 
     /**
@@ -604,6 +604,116 @@ class Job extends \Mathilde\JobeetBundle\Entity\Job implements \Doctrine\ORM\Pro
         $this->__initializer__ && $this->__initializer__->__invoke($this, 'setExpiresAtValue', array());
 
         return parent::setExpiresAtValue();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getWebPath()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getWebPath', array());
+
+        return parent::getWebPath();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getAbsolutePath()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getAbsolutePath', array());
+
+        return parent::getAbsolutePath();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function preUpload()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'preUpload', array());
+
+        return parent::preUpload();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function upload()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'upload', array());
+
+        return parent::upload();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function removeUpload()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'removeUpload', array());
+
+        return parent::removeUpload();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setTokenValue()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setTokenValue', array());
+
+        return parent::setTokenValue();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function isExpired()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'isExpired', array());
+
+        return parent::isExpired();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function expiresSoon()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'expiresSoon', array());
+
+        return parent::expiresSoon();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getDaysBeforeExpires()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getDaysBeforeExpires', array());
+
+        return parent::getDaysBeforeExpires();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function publish()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'publish', array());
+
+        return parent::publish();
     }
 
 }

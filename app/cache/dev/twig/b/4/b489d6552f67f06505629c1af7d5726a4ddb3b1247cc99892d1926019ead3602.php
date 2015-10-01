@@ -81,7 +81,7 @@ class __TwigTemplate_8511286ee0a13283fa2b6d8d430fc64b2e6034d3d69b8bc05d250b67d66
         echo "    <h1>Job edit</h1>
     <form action=\"";
         // line 24
-        echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("mathilde_job_update", array("id" => $this->getAttribute((isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "id", array()))), "html", null, true);
+        echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("mathilde_job_update", array("token" => $this->getAttribute((isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "token", array()))), "html", null, true);
         echo "\" method=\"post\" ";
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock((isset($context["edit_form"]) ? $context["edit_form"] : $this->getContext($context, "edit_form")), 'enctype');
         echo ">
@@ -241,31 +241,15 @@ class __TwigTemplate_8511286ee0a13283fa2b6d8d430fc64b2e6034d3d69b8bc05d250b67d66
                 <tr>
                     <th>";
         // line 98
-        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["edit_form"]) ? $context["edit_form"] : $this->getContext($context, "edit_form")), "token", array()), 'label');
-        echo "</th>
-                    <td>
-                        ";
-        // line 100
-        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["edit_form"]) ? $context["edit_form"] : $this->getContext($context, "edit_form")), "token", array()), 'errors');
-        echo "
-                        ";
-        // line 101
-        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["edit_form"]) ? $context["edit_form"] : $this->getContext($context, "edit_form")), "token", array()), 'widget');
-        echo "
-                    </td>
-                </tr>
-                <tr>
-                    <th>";
-        // line 105
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["edit_form"]) ? $context["edit_form"] : $this->getContext($context, "edit_form")), "is_public", array()), 'label');
         echo "</th>
                     <td>
                         ";
-        // line 107
+        // line 100
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["edit_form"]) ? $context["edit_form"] : $this->getContext($context, "edit_form")), "is_public", array()), 'errors');
         echo "
                         ";
-        // line 108
+        // line 101
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["edit_form"]) ? $context["edit_form"] : $this->getContext($context, "edit_form")), "is_public", array()), 'widget');
         echo "
                         <br /> Whether the job can also be published on affiliate websites or not.
@@ -273,16 +257,16 @@ class __TwigTemplate_8511286ee0a13283fa2b6d8d430fc64b2e6034d3d69b8bc05d250b67d66
                 </tr>
                 <tr>
                     <th>";
-        // line 113
+        // line 106
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["edit_form"]) ? $context["edit_form"] : $this->getContext($context, "edit_form")), "email", array()), 'label');
         echo "</th>
                     <td>
                         ";
-        // line 115
+        // line 108
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["edit_form"]) ? $context["edit_form"] : $this->getContext($context, "edit_form")), "email", array()), 'errors');
         echo "
                         ";
-        // line 116
+        // line 109
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["edit_form"]) ? $context["edit_form"] : $this->getContext($context, "edit_form")), "email", array()), 'widget');
         echo "
                     </td>
@@ -290,7 +274,7 @@ class __TwigTemplate_8511286ee0a13283fa2b6d8d430fc64b2e6034d3d69b8bc05d250b67d66
             </tbody>
         </table>
     ";
-        // line 121
+        // line 114
         echo         $this->env->getExtension('form')->renderer->renderBlock((isset($context["edit_form"]) ? $context["edit_form"] : $this->getContext($context, "edit_form")), 'form_end');
         echo "
 ";
@@ -308,7 +292,7 @@ class __TwigTemplate_8511286ee0a13283fa2b6d8d430fc64b2e6034d3d69b8bc05d250b67d66
 
     public function getDebugInfo()
     {
-        return array (  294 => 121,  286 => 116,  282 => 115,  277 => 113,  269 => 108,  265 => 107,  260 => 105,  253 => 101,  249 => 100,  244 => 98,  237 => 94,  233 => 93,  228 => 91,  221 => 87,  217 => 86,  212 => 84,  205 => 80,  201 => 79,  196 => 77,  189 => 73,  185 => 72,  180 => 70,  173 => 66,  169 => 65,  164 => 63,  157 => 59,  153 => 58,  148 => 56,  141 => 52,  137 => 51,  132 => 49,  125 => 45,  121 => 44,  116 => 42,  109 => 38,  105 => 37,  100 => 35,  84 => 24,  81 => 23,  78 => 22,  72 => 19,  67 => 18,  64 => 17,  57 => 12,  48 => 10,  44 => 9,  41 => 8,  38 => 7,  36 => 6,  33 => 5,  29 => 1,  27 => 3,  11 => 1,);
+        return array (  278 => 114,  270 => 109,  266 => 108,  261 => 106,  253 => 101,  249 => 100,  244 => 98,  237 => 94,  233 => 93,  228 => 91,  221 => 87,  217 => 86,  212 => 84,  205 => 80,  201 => 79,  196 => 77,  189 => 73,  185 => 72,  180 => 70,  173 => 66,  169 => 65,  164 => 63,  157 => 59,  153 => 58,  148 => 56,  141 => 52,  137 => 51,  132 => 49,  125 => 45,  121 => 44,  116 => 42,  109 => 38,  105 => 37,  100 => 35,  84 => 24,  81 => 23,  78 => 22,  72 => 19,  67 => 18,  64 => 17,  57 => 12,  48 => 10,  44 => 9,  41 => 8,  38 => 7,  36 => 6,  33 => 5,  29 => 1,  27 => 3,  11 => 1,);
     }
 }
 /* {% extends 'MathildeJobeetBundle::layout.html.twig' %}*/
@@ -334,7 +318,7 @@ class __TwigTemplate_8511286ee0a13283fa2b6d8d430fc64b2e6034d3d69b8bc05d250b67d66
 /*  */
 /* {% block content %}*/
 /*     <h1>Job edit</h1>*/
-/*     <form action="{{ path('mathilde_job_update', { 'id': entity.id }) }}" method="post" {{ form_enctype(edit_form) }}>*/
+/*     <form action="{{ path('mathilde_job_update', { 'token': entity.token }) }}" method="post" {{ form_enctype(edit_form) }}>*/
 /*         <table id="job_form">*/
 /*             <tfoot>*/
 /*                 <tr>*/
@@ -405,13 +389,6 @@ class __TwigTemplate_8511286ee0a13283fa2b6d8d430fc64b2e6034d3d69b8bc05d250b67d66
 /*                     <td>*/
 /*                         {{ form_errors(edit_form.how_to_apply) }}*/
 /*                         {{ form_widget(edit_form.how_to_apply) }}*/
-/*                     </td>*/
-/*                 </tr>*/
-/*                 <tr>*/
-/*                     <th>{{ form_label(edit_form.token) }}</th>*/
-/*                     <td>*/
-/*                         {{ form_errors(edit_form.token) }}*/
-/*                         {{ form_widget(edit_form.token) }}*/
 /*                     </td>*/
 /*                 </tr>*/
 /*                 <tr>*/

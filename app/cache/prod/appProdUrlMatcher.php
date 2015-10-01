@@ -42,6 +42,11 @@ class appProdUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirecta
                 return $this->mergeDefaults(array_replace($matches, array('_route' => 'mathilde_job_show')), array (  '_controller' => 'Mathilde\\JobeetBundle\\Controller\\JobController::showAction',));
             }
 
+            // mathilde_job_preview
+            if (preg_match('#^/job/(?P<company>[^/]++)/(?P<location>[^/]++)/(?P<token>w+)/(?P<position>[^/]++)$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'mathilde_job_preview')), array (  '_controller' => 'Mathilde\\JobeetBundle\\Controller\\JobController::previewAction',));
+            }
+
             // mathilde_job_new
             if ($pathinfo === '/job/new') {
                 return array (  '_controller' => 'Mathilde\\JobeetBundle\\Controller\\JobController::newAction',  '_route' => 'mathilde_job_new',);
@@ -59,12 +64,12 @@ class appProdUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirecta
             not_mathilde_job_create:
 
             // mathilde_job_edit
-            if (preg_match('#^/job/(?P<id>[^/]++)/edit$#s', $pathinfo, $matches)) {
+            if (preg_match('#^/job/(?P<token>[^/]++)/edit$#s', $pathinfo, $matches)) {
                 return $this->mergeDefaults(array_replace($matches, array('_route' => 'mathilde_job_edit')), array (  '_controller' => 'Mathilde\\JobeetBundle\\Controller\\JobController::editAction',));
             }
 
             // mathilde_job_update
-            if (preg_match('#^/job/(?P<id>[^/]++)/update$#s', $pathinfo, $matches)) {
+            if (preg_match('#^/job/(?P<token>[^/]++)/update$#s', $pathinfo, $matches)) {
                 if (!in_array($this->context->getMethod(), array('POST', 'PUT'))) {
                     $allow = array_merge($allow, array('POST', 'PUT'));
                     goto not_mathilde_job_update;
@@ -75,7 +80,7 @@ class appProdUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirecta
             not_mathilde_job_update:
 
             // mathilde_job_delete
-            if (preg_match('#^/job/(?P<id>[^/]++)/delete$#s', $pathinfo, $matches)) {
+            if (preg_match('#^/job/(?P<token>[^/]++)/delete$#s', $pathinfo, $matches)) {
                 if (!in_array($this->context->getMethod(), array('POST', 'DELETE'))) {
                     $allow = array_merge($allow, array('POST', 'DELETE'));
                     goto not_mathilde_job_delete;
@@ -84,6 +89,17 @@ class appProdUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirecta
                 return $this->mergeDefaults(array_replace($matches, array('_route' => 'mathilde_job_delete')), array (  '_controller' => 'Mathilde\\JobeetBundle\\Controller\\JobController::deleteAction',));
             }
             not_mathilde_job_delete:
+
+            // mathilde_job_publish
+            if (preg_match('#^/job/(?P<token>[^/]++)/publish$#s', $pathinfo, $matches)) {
+                if ($this->context->getMethod() != 'POST') {
+                    $allow[] = 'POST';
+                    goto not_mathilde_job_publish;
+                }
+
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'mathilde_job_publish')), array (  '_controller' => 'Mathilde\\JobeetBundle\\Controller\\JobController::publishAction',));
+            }
+            not_mathilde_job_publish:
 
         }
 

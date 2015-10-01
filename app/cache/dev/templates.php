@@ -87,6 +87,7 @@
   'MathildeJobeetBundle:Job:show.html.twig~' => '/var/www/imiesept/src/Mathilde/JobeetBundle/Resources/views/Job/show.html.twig~',
   'MathildeJobeetBundle:Job:index.html.twig' => '/var/www/imiesept/src/Mathilde/JobeetBundle/Resources/views/Job/index.html.twig',
   'MathildeJobeetBundle:Job:new.html.twig~' => '/var/www/imiesept/src/Mathilde/JobeetBundle/Resources/views/Job/new.html.twig~',
+  'MathildeJobeetBundle:Job:admin.html.twig' => '/var/www/imiesept/src/Mathilde/JobeetBundle/Resources/views/Job/admin.html.twig',
   'MathildeJobeetBundle:Job:edit.html.twig~' => '/var/www/imiesept/src/Mathilde/JobeetBundle/Resources/views/Job/edit.html.twig~',
   'MathildeJobeetBundle::layout.html.twig~' => '/var/www/imiesept/src/Mathilde/JobeetBundle/Resources/views/layout.html.twig~',
   'MathildeJobeetBundle:Default:index.html.twig' => '/var/www/imiesept/src/Mathilde/JobeetBundle/Resources/views/Default/index.html.twig',
