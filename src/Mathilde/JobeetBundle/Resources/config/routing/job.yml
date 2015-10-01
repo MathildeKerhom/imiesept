@@ -39,3 +39,7 @@ mathilde_job_publish:
     pattern:  /{token}/publish
     defaults: { _controller: "MathildeJobeetBundle:Job:publish" }
     requirements: { _method: post }
+ibw_job_extend:
+    pattern:  /{token}/extend
+    defaults: { _controller: "MathildeJobeetBundle:Job:extend" }
+    requirements: { _method: post }
