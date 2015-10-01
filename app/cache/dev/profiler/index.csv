@@ -2,3 +2,9 @@
 0ecff4,127.0.0.1,GET,http://localhost/app_dev.php/,1443721673,
 084d10,127.0.0.1,GET,http://localhost/app_dev.php/,1443722037,
 7d7b38,127.0.0.1,GET,http://localhost/app_dev.php/job/new,1443722049,
+350943,127.0.0.1,GET,http://localhost/app_dev.php/job/new,1443722920,
+a331a8,127.0.0.1,GET,http://localhost/app_dev.php/job/new,1443723092,
+88f7f6,127.0.0.1,GET,http://localhost/app_dev.php/job/create,1443723548,28df03
+28df03,127.0.0.1,POST,http://localhost/app_dev.php/job/create,1443723548,
+ea1f63,127.0.0.1,GET,http://localhost/app_dev.php/job/create,1443724319,23aae4
+23aae4,127.0.0.1,POST,http://localhost/app_dev.php/job/create,1443724319,
