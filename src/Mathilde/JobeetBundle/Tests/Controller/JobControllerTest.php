@@ -187,6 +187,13 @@ class JobControllerTest extends WebTestCase
         $client->submit($form);
         $client->followRedirect();
  
+        if($publish) {
+          $crawler = $client->getCrawler();
+          $form = $crawler->selectButton('Publish')->form();
+          $client->submit($form);
+          $client->followRedirect();
+        }
+
         return $client;
     }
 
@@ -220,5 +227,26 @@ class JobControllerTest extends WebTestCase
         $query = $em->createQuery('SELECT count(j.id) from MathildeJobeetBundle:Job j WHERE j.position = :position');
         $query->setParameter('position', 'FOO2');
         $this->assertTrue(0 == $query->getSingleScalarResult());
+    }
+
+    public function getJobByPosition($position)
+    {
+        $kernel = static::createKernel();
+        $kernel->boot();
+        $em = $kernel->getContainer()->get('doctrine.orm.entity_manager');
+ 
+        $query = $em->createQuery('SELECT j from MathildeJobeetBundle:Job j WHERE j.position = :position');
+        $query->setParameter('position', $position);
+        $query->setMaxResults(1);
+        
+	return $query->getSingleResult();
+    }
+
+    public function testEditJob()
+    {
+        $client = $this->createJob(array('job[position]' => 'FOO3'), true);
+        $crawler = $client->getCrawler();
+        $crawler = $client->request('GET', sprintf('/job/%s/edit', $this->getJobByPosition('FOO3')->getToken()));
+        $this->assertTrue(404 === $client->getResponse()->getStatusCode());
     }
 }
