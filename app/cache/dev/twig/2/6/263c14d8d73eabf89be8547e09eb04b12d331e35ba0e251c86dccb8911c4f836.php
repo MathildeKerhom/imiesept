@@ -81,23 +81,31 @@ class __TwigTemplate_ac3da3ce215446d63c019c6f6106e0685e30730721518088c73d9203583
             // line 27
             if ($this->getAttribute((isset($context["job"]) ? $context["job"] : $this->getContext($context, "job")), "expiresSoon", array())) {
                 // line 28
-                echo "                    - <a href=\"\">Extend</a> for another 30 days
+                echo "                    <form action=\"";
+                echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("mathilde_job_extend", array("token" => $this->getAttribute((isset($context["job"]) ? $context["job"] : $this->getContext($context, "job")), "token", array()))), "html", null, true);
+                echo "\" method=\"post\">
+        \t\t";
+                // line 29
+                echo $this->env->getExtension('form')->renderer->searchAndRenderBlock((isset($context["extend_form"]) ? $context["extend_form"] : $this->getContext($context, "extend_form")), 'widget');
+                echo "
+        \t\t<button type=\"submit\">Extend</button> for another 30 days
+    \t\t    </form>
                 ";
             }
-            // line 30
+            // line 33
             echo "            </li>
         ";
         } else {
-            // line 32
+            // line 35
             echo "            <li>
                 [Bookmark this <a href=\"";
-            // line 33
+            // line 36
             echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getUrl("mathilde_job_preview", array("token" => $this->getAttribute((isset($context["job"]) ? $context["job"] : $this->getContext($context, "job")), "token", array()), "company" => $this->getAttribute((isset($context["job"]) ? $context["job"] : $this->getContext($context, "job")), "companyslug", array()), "location" => $this->getAttribute((isset($context["job"]) ? $context["job"] : $this->getContext($context, "job")), "locationslug", array()), "position" => $this->getAttribute((isset($context["job"]) ? $context["job"] : $this->getContext($context, "job")), "positionslug", array()))), "html", null, true);
             echo "\">URL</a> to manage this job in the future.]
             </li>
         ";
         }
-        // line 36
+        // line 39
         echo "    </ul>
 </div>
 ";
@@ -115,7 +123,7 @@ class __TwigTemplate_ac3da3ce215446d63c019c6f6106e0685e30730721518088c73d9203583
 
     public function getDebugInfo()
     {
-        return array (  101 => 36,  95 => 33,  92 => 32,  88 => 30,  84 => 28,  82 => 27,  79 => 26,  73 => 24,  69 => 22,  67 => 21,  60 => 20,  58 => 19,  51 => 15,  47 => 14,  44 => 13,  36 => 8,  32 => 7,  26 => 5,  24 => 4,  19 => 1,);
+        return array (  109 => 39,  103 => 36,  100 => 35,  96 => 33,  89 => 29,  84 => 28,  82 => 27,  79 => 26,  73 => 24,  69 => 22,  67 => 21,  60 => 20,  58 => 19,  51 => 15,  47 => 14,  44 => 13,  36 => 8,  32 => 7,  26 => 5,  24 => 4,  19 => 1,);
     }
 }
 /* <div id="job_actions">*/
@@ -145,7 +153,10 @@ class __TwigTemplate_ac3da3ce215446d63c019c6f6106e0685e30730721518088c73d9203583
 /*                 {% endif %}*/
 /*  */
 /*                 {% if job.expiresSoon %}*/
-/*                     - <a href="">Extend</a> for another 30 days*/
+/*                     <form action="{{ path('mathilde_job_extend', { 'token': job.token }) }}" method="post">*/
+/*         		{{ form_widget(extend_form) }}*/
+/*         		<button type="submit">Extend</button> for another 30 days*/
+/*     		    </form>*/
 /*                 {% endif %}*/
 /*             </li>*/
 /*         {% else %}*/

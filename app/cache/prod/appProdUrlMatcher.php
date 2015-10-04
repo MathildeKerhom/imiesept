@@ -101,6 +101,17 @@ class appProdUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirecta
             }
             not_mathilde_job_publish:
 
+            // ibw_job_extend
+            if (preg_match('#^/job/(?P<token>[^/]++)/extend$#s', $pathinfo, $matches)) {
+                if ($this->context->getMethod() != 'POST') {
+                    $allow[] = 'POST';
+                    goto not_ibw_job_extend;
+                }
+
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'ibw_job_extend')), array (  '_controller' => 'Mathilde\\JobeetBundle\\Controller\\JobController::extendAction',));
+            }
+            not_ibw_job_extend:
+
         }
 
         // mathilde_jobeet_homepage
